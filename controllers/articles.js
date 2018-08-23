@@ -59,5 +59,4 @@ function parseHtml(html) {
     const $ = cheerio.load(html);
     let token = $('meta[name="csrf-token"]').attr('content');
     return token;
-
 }
