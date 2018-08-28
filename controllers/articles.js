@@ -8,7 +8,7 @@ module.exports.home = function* (next) {
     this.body = 'welcome';
 }
 
-module.exports.init = function* (ctx) {
+module.exports.init = function* (next) {
     if ('GET' != this.method) return yield next;
 
     const data = yield getData().catch((err) => {
