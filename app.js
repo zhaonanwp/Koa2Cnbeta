@@ -7,7 +7,9 @@ var koa = require('koa');
 var app = new koa();
 
 app.use(route.get('/articles/init',articles.init));
+app.use(route.get('/articles/detail/:url',articles.detail));
 app.use(route.get('/articles/:token/:page',articles.list));
+
 
 // Compress
 app.use(compress());
