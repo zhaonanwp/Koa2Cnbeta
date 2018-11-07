@@ -65,7 +65,7 @@ function getList(token, page) {
 function getDetailPage(sid) {
     return new Promise((resolve, reject) => {
         request
-            .get('https://www.cnbeta.com/articles/tech/'+sid+'.htm')
+            .get('https://www.cnbeta.com/articles/'+sid+'.htm')
             .set('Referer', 'https://www.cnbeta.com')
             .end(function (err, res) {
                 if (err) {
