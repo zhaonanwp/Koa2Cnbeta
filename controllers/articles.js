@@ -25,9 +25,9 @@ module.exports.list = function* (token, page, next) {
     })
     this.body = data;
 };
-module.exports.detail = function* (url, next) {
+module.exports.detail = function* (category,sid, next) {
     if ('GET' != this.method) return yield next;
-    const data = yield getDetailPage(url).catch((err) => {
+    const data = yield getDetailPage(category,sid).catch((err) => {
         console.log(err);
     })
     this.body = parseDetail(data);
@@ -62,10 +62,10 @@ function getList(token, page) {
             })
     })
 }
-function getDetailPage(sid) {
+function getDetailPage(category,sid) {
     return new Promise((resolve, reject) => {
         request
-            .get('https://www.cnbeta.com/articles/'+sid+'.htm')
+            .get('https://www.cnbeta.com/articles/'+category+'/'+sid+'.htm')
             .set('Referer', 'https://www.cnbeta.com')
             .end(function (err, res) {
                 if (err) {

@@ -10,7 +10,7 @@ var app = new koa();
 app.use(cors());
 
 app.use(route.get('/articles/init',articles.init));
-app.use(route.get('/articles/detail/:url',articles.detail));
+app.use(route.get('/articles/detail/:category/:sid',articles.detail));
 app.use(route.get('/articles/:token/:page',articles.list));
 
 
