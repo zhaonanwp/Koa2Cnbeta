@@ -22,7 +22,7 @@
     "koa-static": "^2.0.0",
     "koa2-cors": "^2.0.6",
     "monk": "^4.0.0",
-    "snyk": "^1.217.3",
+    "snyk": "^1.1024.0",
     "superagent": "^3.8.3"
   },
   "devDependencies": {
